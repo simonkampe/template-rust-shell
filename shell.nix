@@ -10,5 +10,6 @@ in pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     pkg-config
     rust
+    rust-analyzer
   ];
 }
