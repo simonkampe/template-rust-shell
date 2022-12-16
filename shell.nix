@@ -7,6 +7,9 @@
 let
   rust = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain;
 in pkgs.mkShell {
+  LD_LIBRARY_PATH="/run/opengl-driver/lib/:${pkgs.libGL}/lib/:${pkgs.libGLU}/lib/:${pkgs.vulkan-headers}:${pkgs.vulkan-loader}/lib/";
+  RUST_BACKTRACE="full";
+
   nativeBuildInputs = with pkgs; [
     pkg-config
     rust
